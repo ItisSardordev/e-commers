@@ -22,11 +22,14 @@ document.getElementById("admin-login").onclick = async () => {
   if (!email || !password)
     return (loginMsg.innerText = "Email va parol kiriting");
   try {
-    const res = await fetch(API, {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ email, password }),
-    });
+    const res = await fetch(
+      API + "https://e-commers-ashy.vercel.app/server.js/admin/login",
+      {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ email, password }),
+      }
+    );
     const data = await res.json();
     if (data.token) {
       adminToken = data.token;
