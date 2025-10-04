@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="uz">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Eco Shop</title>
+    <link rel="stylesheet" href="./styless.css" />
+    <script src="https://js.stripe.com/v3/"></script>
+    <!-- PayPal SDK: client-id should be your sandbox/live client id in production.
+       For demo replace YOUR_PAYPAL_CLIENT_ID bilan -->
+    <script src="https://www.paypal.com/sdk/js?client-id=YOUR_PAYPAL_CLIENT_ID&currency=USD"></script>
+  </head>
+  <body>
+    <header class="site-header">
+      <h1 class="logo">Eco Shop</h1>
+      <div class="cart-btn" id="open-cart">
+        Savatcha (<span id="cart-count">0</span>)
+      </div>
+    </header>
+
+    <main>
+      <section class="products" id="products"></section>
+    </main>
+
+    <!-- Cart modal -->
+    <div class="cart-modal" id="cart-modal">
+      <div class="cart-panel">
+        <button class="close" id="close-cart">✕</button>
+        <h2>Sizning savatchingiz</h2>
+        <div id="cart-items"></div>
+        <div class="cart-footer">
+          <div class="total">Jami: $<span id="cart-total">0</span></div>
+          <div>
+            <button id="checkout">Toʻlovga oʻtish</button>
+          </div>
+        </div>
+        <div id="paypal-button-container" style="margin-top: 12px"></div>
+      </div>
+    </div>
+
+    <script src="app.js"></script>
+  </body>
+</html>

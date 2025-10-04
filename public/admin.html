@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="uz">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Admin Panel</title>
+    <link rel="stylesheet" href="styles.css" />
+    <style>
+      /* Soddalashtirilgan styling admin uchun */
+      .admin-wrap {
+        max-width: 1000px;
+        margin: 20px auto;
+        padding: 16px;
+      }
+      .admin-box {
+        background: #fff;
+        padding: 16px;
+        border-radius: 8px;
+        box-shadow: 0 6px 20px rgba(0, 0, 0, 0.05);
+        margin-bottom: 12px;
+      }
+      input,
+      button,
+      textarea {
+        padding: 8px;
+        margin: 6px 0;
+        width: 100%;
+        box-sizing: border-box;
+      }
+      .row {
+        display: flex;
+        gap: 8px;
+      }
+      .row > * {
+        flex: 1;
+      }
+      pre {
+        background: #f5f5f5;
+        padding: 8px;
+        overflow: auto;
+        max-height: 300px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="admin-wrap">
+      <h1>Admin Panel</h1>
+
+      <div id="login-area" class="admin-box">
+        <h3>Kirish</h3>
+        <input id="admin-email" placeholder="Email" />
+        <input id="admin-pass" placeholder="Parol" type="password" />
+        <button id="admin-login">Kirish</button>
+        <div id="login-msg"></div>
+      </div>
+
+      <div id="panel-area" style="display: none">
+        <div class="admin-box">
+          <button id="load-orders">Buyurtmalarni yuklash</button>
+          <button id="load-products">Mahsulotlarni yuklash</button>
+          <button id="logout">Chiqish</button>
+        </div>
+
+        <div class="admin-box">
+          <h3>Yangi mahsulot qo'shish</h3>
+          <input id="p-title" placeholder="Nomi" />
+          <input id="p-price" placeholder="Narxi" type="number" />
+          <input id="p-image" placeholder="Rasm URL" />
+          <textarea id="p-desc" placeholder="Tavsif"></textarea>
+          <button id="add-product">Qo'shish</button>
+        </div>
+
+        <div class="admin-box">
+          <h3>Mahsulotlar</h3>
+          <ul id="product-list"></ul>
+        </div>
+
+        <div class="admin-box">
+          <h3>Buyurtmalar</h3>
+          <div id="orders-output"><em>Hech narsa yuklanmagan</em></div>
+        </div>
+      </div>
+    </div>
+
+    <script src="admin.js"></script>
+  </body>
+</html>

@@ -1,0 +1,156 @@
+:root {
+    --accent: #00a86b;
+    --bg: #f7f7fb
+}
+
+* {
+    box-sizing: border-box
+}
+
+body {
+    font-family: Inter, system-ui, Arial;
+    background: var(--bg);
+    margin: 0;
+    color: #222
+}
+
+.site-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 18px 28px;
+    background: white;
+    box-shadow: 0 4px 18px rgba(0, 0, 0, 0.06)
+}
+
+.logo {
+    font-size: 20px
+}
+
+.cart-btn {
+    background: var(--accent);
+    color: white;
+    padding: 8px 14px;
+    border-radius: 8px;
+    cursor: pointer
+}
+
+.products {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 18px;
+    padding: 28px
+}
+
+.card {
+    background: white;
+    border-radius: 12px;
+    padding: 14px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.06);
+    transition: transform .25s ease, box-shadow .25s
+}
+
+.card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 18px 40px rgba(0, 0, 0, 0.08)
+}
+
+.card img {
+    width: 100%;
+    height: 140px;
+    object-fit: cover;
+    border-radius: 8px
+}
+
+.card h3 {
+    margin: 10px 0 6px;
+    font-size: 16px
+}
+
+.card p {
+    font-size: 13px;
+    color: #666
+}
+
+.card .price {
+    font-weight: 600;
+    margin-top: 8px
+}
+
+.btn {
+    display: inline-block;
+    padding: 8px 12px;
+    border-radius: 8px;
+    background: linear-gradient(90deg, var(--accent), #008558);
+    color: white;
+    border: none;
+    cursor: pointer;
+    margin-top: 10px
+}
+
+/* cart modal */
+.cart-modal {
+    position: fixed;
+    inset: 0;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    background: rgba(0, 0, 0, 0.35)
+}
+
+.cart-modal.show {
+    display: flex
+}
+
+.cart-panel {
+    width: 420px;
+    background: white;
+    padding: 18px;
+    border-radius: 12px;
+    position: relative;
+    animation: slideUp .35s ease
+}
+
+.cart-panel .close {
+    position: absolute;
+    right: 10px;
+    top: 10px;
+    border: none;
+    background: transparent;
+    font-size: 18px;
+    cursor: pointer
+}
+
+.cart-item {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 8px 0;
+    border-bottom: 1px solid #f0f0f0
+}
+
+.cart-item img {
+    width: 60px;
+    height: 45px;
+    object-fit: cover;
+    border-radius: 6px
+}
+
+.cart-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 12px
+}
+
+@keyframes slideUp {
+    from {
+        transform: translateY(20px);
+        opacity: 0
+    }
+
+    to {
+        transform: translateY(0);
+        opacity: 1
+    }
+}
