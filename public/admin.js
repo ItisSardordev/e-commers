@@ -22,7 +22,7 @@ document.getElementById("admin-login").onclick = async () => {
   if (!email || !password)
     return (loginMsg.innerText = "Email va parol kiriting");
   try {
-    const res = await fetch(API + "./admin/login", {
+    const res = await fetch(API, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ email, password }),
