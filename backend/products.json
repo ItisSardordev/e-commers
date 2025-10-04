@@ -1,4 +1,23 @@
 [
-  { "id": 1, "title": "23L Suv Butilkasi", "price": 2.5, "image": "https://via.placeholder.com/300x200?text=Suvo", "desc": "Sifatli toza suv." },
-  { "id": 2, "title": "Metal skoba", "price": 5.0, "image": "https://via.placeholder.com/300x200?text=Skoba", "desc": "Mustahkam metal skoba." }
+  {
+    "id": 1,
+    "title": "23L Suv Butilkasi",
+    "price": 2.5,
+    "image": "https://via.placeholder.com/300x200?text=Suvo",
+    "desc": "Sifatli toza suv."
+  },
+  {
+    "id": 2,
+    "title": "Metal skoba",
+    "price": 5,
+    "image": "https://via.placeholder.com/300x200?text=Skoba",
+    "desc": "Mustahkam metal skoba."
+  },
+  {
+    "title": "sardor",
+    "price": 15555555,
+    "image": "https://avatars.mds.yandex.net/i?id=1bb65a3fcc86d7542e260ed32891273ad7201d32-12513510-images-thumbs&n=13",
+    "desc": "sadksnfldasnflndwlnflsa",
+    "id": 1759598889898
+  }
 ]
