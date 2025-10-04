@@ -15,21 +15,27 @@ function showPanel(show) {
   }
 }
 showPanel(!!adminToken);
-
+app.post("/api/admin/login", async (req, res) => {
+  const { email, password } = req.body;
+  const admins = readJSON(adminsPath);
+  const admin = admins.find((a) => a.email === email);
+  if (!admin) return res.status(401).json({ error: "Invalid" });
+  const ok = await bcrypt.compare(password, admin.passwordHash);
+  if (!ok) return res.status(401).json({ error: "Invalid" });
+  const token = generateToken(admin);
+  res.json({ token, email: admin.email });
+});
 document.getElementById("admin-login").onclick = async () => {
   const email = document.getElementById("admin-email").value;
   const password = document.getElementById("admin-pass").value;
   if (!email || !password)
     return (loginMsg.innerText = "Email va parol kiriting");
   try {
-    const res = await fetch(
-      API + "https://e-commers-ashy.vercel.app/server.js/admin/login",
-      {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ email, password }),
-      }
-    );
+    const res = await fetch(API + "/admin/login", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ email, password }),
+    });
     const data = await res.json();
     if (data.token) {
       adminToken = data.token;
