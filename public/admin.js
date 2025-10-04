@@ -15,7 +15,7 @@ function showPanel(show) {
   }
 }
 showPanel(!!adminToken);
-app.post("/api/admin/login", async (req, res) => {
+document.post("/api/admin/login", async (req, res) => {
   const { email, password } = req.body;
   const admins = readJSON(adminsPath);
   const admin = admins.find((a) => a.email === email);
